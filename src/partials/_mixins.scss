@@ -1,0 +1,42 @@
+// Main Color
+$primaryColor: #4dc1b8;
+$primaryColorLight: #c3e2de;
+
+// Grey tints
+$secondaryColorDark: #6d6e70;
+$secondaryColor: #939597;
+$secondaryColorLight: #bbbdc0;
+
+//Background Color
+$backgroundColor: #e6e7e8;
+
+
+// HEADER/FOOTER HEIGHT
+$headerHeight: 60px;
+$footerHeight: 60px;
+$insideContainer: calc(100% - 120px);
+
+//MIXINS
+
+//FONTS
+@mixin headerFont {
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 3rem;
+}
+
+@mixin dayHeader {
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: $secondaryColorDark;
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+    font-weight: 200;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,32 @@
+// FOOTER
+.footer {
+    width: 100%;
+    height: $footerHeight;
+    @include flexCenter;
+    background-color: $secondaryColorDark;
+    position: absolute;
+    bottom: 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        width: 100%;
+        max-width: 600px;
+    }
+    &__button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        background-color: $primaryColor;
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        @include flexCenter;
+        &:hover {
+            // background-color: $primaryColorLight;
+            border: 3px solid white;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import 'partials/_setup.scss';
+@import 'partials/_mixins.scss';
+@import 'partials/_global.scss';
+
+// SECTIONS
+@import 'partials/_app.scss';
+@import 'partials/_header.scss';
+@import 'partials/_home.scss';
+@import 'partials/_footer.scss';
+@import 'partials/_day.scss';
+@import 'partials/_schedule.scss';
+@import 'partials/_workout.scss';
+@import 'partials/_form.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}

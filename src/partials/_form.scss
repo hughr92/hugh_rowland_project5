@@ -1,0 +1,154 @@
+// .workoutForm {
+//     // position: absolute;
+//     // top: 60px;
+//     // bottom: 60px;
+//     // flex-wrap: wrap;
+//     // @include flexCenter;
+//     width: 100%;
+//     max-width: 800px;
+//     margin: 0 auto;
+//     background-color: $secondaryColorDark;
+//     padding: 10px 40px 10px;
+//     font-size: 1rem;
+//     text-transform: uppercase;
+
+//     & p {
+//         color: white;
+//     }
+//     &__input {
+//         background: $secondaryColor;
+//         border: none;
+//         width: 20px;
+//         flex-grow: 1;
+//         margin: 5px;
+//         color: white;
+//         padding: 5px;
+//     }
+//     &__submit {
+//         text-transform: uppercase;
+//         background-color: $primaryColor;
+//         border: none;
+//         color: white;
+//         border: none;
+//         padding: 5px 10px;
+//         &:hover {
+//             background-color: white;
+//             color: $primaryColor;
+//         }
+//     }
+//     & form {
+//         display: flex;
+//         // flex-wrap: wrap;
+//         align-items: center;
+//         justify-content: space-between;
+//     }
+//     &__days {
+//         margin: 10px 0;
+//         width: 100%;
+//         @include flexCenter;
+//         &__checkbox {
+//             display: none;
+//             &:checked + label {
+//                 background-color: $primaryColor;
+//                 border-color: $primaryColor;
+//             }
+//         }
+//         &__label {
+//             cursor: pointer;
+//             width: calc(100% / 7);
+//             // max-width: 50px;
+//             border: 1px solid $secondaryColor;
+//             color: white;
+//             padding: 10px 0px;
+//             border-right: none;
+//             &:hover {
+//                 background-color: $secondaryColor;
+//             }
+//             &:last-of-type {
+//                 border-right: 1px solid $secondaryColor;
+//             }
+//         }
+        
+//     }
+// }
+
+
+.workoutForm {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px 40px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    & p {
+        margin: 0px;
+        color: $secondaryColorDark;
+    }
+    &__input {
+        background: $secondaryColor;
+        border: none;
+        width: 100%;
+        flex-grow: 1;
+        color: white;
+        padding: 5px;
+    }
+    &__submit {
+        margin-top: 10px;
+        text-transform: uppercase;
+        background-color: $primaryColor;
+        border: none;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border: 2px solid $primaryColor;
+        &:hover {
+            background-color: white;
+            color: $primaryColor;
+        }
+    }
+    & form {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__days {
+        margin: 10px 0;
+        width: 100%;
+        @include flexCenter;
+        &__checkbox {
+            display: none;
+            &:checked + label {
+                background-color: $primaryColor;
+                border-color: $primaryColor;
+            }
+        }
+        &__label {
+            cursor: pointer;
+            width: calc(100% / 7);
+            width: calc(100% / 1);
+            // max-width: 50px;
+            border: 1px solid $secondaryColor;
+            color: $secondaryColorDark;
+            padding: 5px 0px;
+            &:hover {
+                background-color: $primaryColorLight;
+            }
+            // border-right: none;
+            // &:last-of-type {
+            //     border-right: 1px solid $secondaryColor;
+            // }
+        }
+        
+    }
+}

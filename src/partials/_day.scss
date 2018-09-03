@@ -1,0 +1,33 @@
+.day {
+    // not working?????
+    width: 100%;
+    height: calc(100% / 7);
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    // border-top: 2px solid $backgroundColor;
+    cursor: pointer;
+    transition: all .3s;
+    border-bottom: 2px solid $backgroundColor;
+    &:last-of-type {
+        border-bottom: none;
+    }
+    &__header {
+        @include dayHeader;
+    }
+    &__button {
+        font-size: 3rem;
+        border: transparent;
+        background-color: transparent;
+        transition: all .3s;
+    }
+    &:hover {
+        background-color: $primaryColorLight;
+    }
+    &:hover &__button {
+        color: $primaryColor;
+        margin-right: -20px;
+    }
+}
