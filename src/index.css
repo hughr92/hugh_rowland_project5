@@ -371,7 +371,8 @@ main {
       display: none; }
       .workoutForm__days__checkbox:checked + label {
         background-color: #4dc1b8;
-        border-color: #4dc1b8; }
+        border-color: #4dc1b8;
+        color: white; }
     .workoutForm__days__label {
       cursor: pointer;
       width: calc(100% / 7);

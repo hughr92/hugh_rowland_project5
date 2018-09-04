@@ -115,7 +115,7 @@ class App extends Component {
 
   handleShow = (e)=> {
     console.log(e.target.id);
-    if(e.target.id != ""){
+    if(e.target.id !== ""){
       this.setState({
         activeDay: null,
         page: e.target.id
@@ -223,11 +223,11 @@ class App extends Component {
       <div className="App">
         <Header title={this.state.page}/>
         <main>
-          {this.state.page == 'Home' && (
+          {this.state.page === 'Home' && (
             <Home />
           )}
 
-          {this.state.page == 'Schedule' && (
+          {this.state.page === 'Schedule' && (
             <div className="schedule">
               {!this.state.activeDay && (
                 <div>
@@ -248,7 +248,7 @@ class App extends Component {
             <WorkoutList workoutList={this.state[this.state.activeDay]} />
           )}
 
-          {this.state.page == 'WorkoutForm' && (
+          {this.state.page === 'WorkoutForm' && (
             <WorkoutForm addWorkoutToDataBase={this.addWorkoutToDataBase} />
           )}
         </main>

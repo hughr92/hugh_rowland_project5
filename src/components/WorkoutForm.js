@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-const daysArray =[];
+// const daysArray =[];
 
 class WorkoutForm extends Component {
     constructor(){
@@ -17,14 +17,15 @@ class WorkoutForm extends Component {
         // console.log(e.target);
         console.log(e.target.id);
         console.log(e.target.checked);
-        if(e.target.checked){
-            daysArray.push(e.target.id)
-        } else {
-            daysArray.pop(e.target.id)
-        }
-        console.log(daysArray);
+        // if(e.target.checked){
+        //     daysArray.push(e.target.id)
+        // } else {
+        //     daysArray.pop(e.target.id)
+        // }
+
         this.setState({
-            userDays: daysArray
+            userDays: this.state.userDays.concat(e.target.id)
+            
         })
         
         
@@ -51,13 +52,18 @@ class WorkoutForm extends Component {
         
     }
 
+    isChecked = (day) => {
+        // if this day is in the userdays Array, return true
+        return this.state.userDays.includes(day)
+    }
+
     handleSubmit = (e) => {
         console.log('handle submit');
         e.preventDefault();
 
         console.log(e.target.checked);
 
-        if (this.state.currentTitleValue && this.state.currentRepValue && this.state.currentSetValue){
+        if (this.state.currentTitleValue && this.state.currentRepValue && this.state.currentSetValue && this.state.userDays.length > 0){
 
             this.props.addWorkoutToDataBase(this.state.currentTitleValue, this.state.currentRepValue, this.state.currentSetValue, this.state.userDays);
             //clear data
@@ -65,6 +71,7 @@ class WorkoutForm extends Component {
                 currentTitleValue: "",
                 currentRepValue: "",
                 currentSetValue: "",
+                userDays: []
             })
         }
        
@@ -88,25 +95,25 @@ class WorkoutForm extends Component {
                 </form>
                 <form className="workoutForm__days">
 
-                    <input id="monday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked}  />
+                    <input checked={this.isChecked('monday')} id="monday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked}  />
                     <label htmlFor="monday" className="workoutForm__days__label">monday</label>
 
-                    <input id="tuesday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('tuesday')} id="tuesday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="tuesday" className="workoutForm__days__label">tuesday</label>
 
-                    <input id="wednesday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('wednesday')} id="wednesday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="wednesday" className="workoutForm__days__label">wednesday</label>
 
-                    <input id="thursday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('thursday')} id="thursday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="thursday" className="workoutForm__days__label">thursday</label>
 
-                    <input id="friday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('friday')} id="friday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="friday" className="workoutForm__days__label">friday</label>
 
-                    <input id="saturday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('saturday')} id="saturday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="saturday" className="workoutForm__days__label">saturday</label>
 
-                    <input id="sunday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
+                    <input checked={this.isChecked('sunday')} id="sunday" type="checkbox" className="workoutForm__days__checkbox" onChange={this.handleChecked} />
                     <label htmlFor="sunday" className="workoutForm__days__label">sunday</label>
                 </form>
             </div>

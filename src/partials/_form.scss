@@ -131,6 +131,7 @@
             &:checked + label {
                 background-color: $primaryColor;
                 border-color: $primaryColor;
+                color: white;
             }
         }
         &__label {
